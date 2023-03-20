@@ -46,7 +46,7 @@
                 </button>
           </div>
         </div>
-      </nav>
+    </nav>
 
       <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -56,7 +56,7 @@
             <a class="nav-link" href="Trasferencias.html"><h5 class="text-secondary">Tranferencias</h5></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><h5 class="text-secondary">Historial</h5></a>
+            <a class="nav-link" href="Historial.html"><h5 class="text-secondary">Historial</h5></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="Graficos.html"><h5 class="text-secondary">Graficos</h5></a>
@@ -66,10 +66,33 @@
         </li>
       </ul>
 
-    
-      
-      
-  </body>
+      <div class="container" id="grafica">
+        <div><canvas id="myChart"></canvas></div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+                const ctx = document.getElementById('myChart').getContext("2d");
+            
+                new Chart(ctx,{
+                type: 'doughnut',
+                data: {
+                    labels: ['Pagos', 'Retiros', 'Depositos'
+                    ],
+                    datasets: [{
+                    label: 'Marzo',
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                    ],
+                hoverOffset: 4
+                    }]
+                    },
+                    });
+        </script>
+      </div>
+
+</body>
     <div class="footer">
         <footer class="text-center text-white" style="background-color: #DC3545">
             <div class="container p-4 pb-0">
